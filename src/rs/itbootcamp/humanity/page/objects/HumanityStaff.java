@@ -55,12 +55,12 @@ public class HumanityStaff {
 
 	// employee's first name
 
-	public static WebElement getFirstNameInput(WebDriver driver, int poRedu) {
-		return driver.findElement(By.xpath(FIRST_NAME_XPATH + poRedu + INPUT_ENDING_XPATH));
+	public static WebElement getFirstNameInput(WebDriver driver, int redBr) {
+		return driver.findElement(By.xpath(FIRST_NAME_XPATH + redBr + INPUT_ENDING_XPATH));
 	}
 
-	public static void setFirstNameInput(WebDriver driver, String name, int poRedu) {
-		getFirstNameInput(driver, poRedu).sendKeys(name);
+	public static void setFirstNameInput(WebDriver driver, String name, int redBr) {
+		getFirstNameInput(driver, redBr).sendKeys(name);
 	}
 
 	// employee's last name

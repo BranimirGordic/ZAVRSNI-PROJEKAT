@@ -79,4 +79,6 @@ public class HumanityMenu {
 	public static void clickRepotsButton(WebDriver driver) {
 		getRepotsButton(driver).click();
 	}
+
+	
 }
