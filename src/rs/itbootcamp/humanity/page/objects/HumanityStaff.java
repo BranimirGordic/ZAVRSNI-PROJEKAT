@@ -6,19 +6,20 @@ import org.openqa.selenium.WebElement;
 
 public class HumanityStaff {
 	public static final String URL = "https://boban1.humanity.com/app/staff/list/load/true/";
-	private static final String ZAPOSLENI_1 = "//a[contains(text(),'Branimir go')]";
-	private static final String ZAPOSLENI_2 = "//tr[3]//td[2]//a[1]";
-	private static final String ZAPOSLENI_3 = "//tr[4]//td[2]//a[1]";
+	private static final String ZAPOSLENI ="//a[contains(text()";
+	private static final String ZAPOSLENI_1 = ",'Branimir go')]";
+	private static final String ZAPOSLENI_2 = ",'Milos Sreckovic')]";
+	private static final String ZAPOSLENI_3 = ",'Ana Radojicic')]";
 	private static final String ADD_EMPLOYEES = "//button[@id='act_primary']";
 	private static final String FIRST_NAME_XPATH = "//input[@id='_asf";
 	private static final String LAST_NAME_XPATH = "//input[@id='_asl";
 	private static final String EMAIL_NAME_XPATH = "//input[@id='_ase";
 	private static final String INPUT_ENDING_XPATH = "']";
 	private static final String SAVE_EMPLOYEES = "//button[@id='_as_save_multiple']";
-
+		
 //	Zaposleni 1
 	public static WebElement getZaposlenog_1(WebDriver driver) {
-		return driver.findElement(By.xpath(ZAPOSLENI_1));
+		return driver.findElement(By.xpath(ZAPOSLENI+ ZAPOSLENI_1));
 	}
 
 	public static void clickZaposlenog_1(WebDriver driver) {
@@ -27,7 +28,7 @@ public class HumanityStaff {
 
 	// zposleni 2
 	public static WebElement getZaposlenog_2(WebDriver driver) {
-		return driver.findElement(By.xpath(ZAPOSLENI_2));
+		return driver.findElement(By.xpath(ZAPOSLENI+ZAPOSLENI_2));
 	}
 
 	public static void clickZaposlenog_2(WebDriver driver) {
@@ -36,7 +37,7 @@ public class HumanityStaff {
 
 	// zaposleni 3
 	public static WebElement getZaposlenog_3(WebDriver driver) {
-		return driver.findElement(By.xpath(ZAPOSLENI_3));
+		return driver.findElement(By.xpath(ZAPOSLENI+ZAPOSLENI_3));
 	}
 
 	public static void clickZaposlenog_3(WebDriver driver) {

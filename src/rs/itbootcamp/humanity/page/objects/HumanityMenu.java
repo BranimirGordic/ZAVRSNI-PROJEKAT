@@ -14,6 +14,7 @@ public class HumanityMenu {
 	private static final String STAFF_BUTTON = "//a[@id='sn_staff']//span[@class='primNavQtip__inner']";
 	private static final String PAYROLL_BUTTON = "//i[@class='primNavQtip__icon icon-payroll']";
 	private static final String REPOTS_BUTTON = "//i[@class='primNavQtip__icon icon-chart']";
+	private static final String SETTING_MENU ="//i[@class='primNavQtip__icon icon-gear']";
 
 	// dashbord button
 	public static WebElement getDashbord(WebDriver driver) {
@@ -79,6 +80,14 @@ public class HumanityMenu {
 	public static void clickRepotsButton(WebDriver driver) {
 		getRepotsButton(driver).click();
 	}
+	// setting menu
+		public static WebElement getSettingMenu(WebDriver driver) {
+			return driver.findElement(By.xpath(SETTING_MENU));
+		}
+
+		public static void clicSettingMenu(WebDriver driver) {
+			getSettingMenu(driver).click();
+		}
 
 	
 }

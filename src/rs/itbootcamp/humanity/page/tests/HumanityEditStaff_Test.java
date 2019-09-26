@@ -1,5 +1,6 @@
 package rs.itbootcamp.humanity.page.tests;
 
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,7 @@ import rs.itbootcamp.humanity.page.objects.HumanityHome;
 import rs.itbootcamp.humanity.page.objects.HumanityProfile;
 
 public class HumanityEditStaff_Test {
-	public static boolean test_HumanityEditStaff() throws InterruptedException {
+	public static boolean Edit_Staff() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
@@ -19,25 +20,22 @@ public class HumanityEditStaff_Test {
 		driver.manage().window().maximize();
 
 		HumanityHome.clickGoToLogin(driver);
-
 		HumanityHome.clickUserName(driver);
 		HumanityHome.inputUserName(driver, "kaboget@net1mail.com");
-
 		HumanityHome.clickPssword(driver);
 		HumanityHome.inputPssword(driver, "bobanrajovic");
-
 		HumanityHome.clickLogin(driver);
-
 		HumanityProfile.clickProfiIcon(driver);
+		// dodavanje slike
 		HumanityProfile.clickIconSetting(driver);
+		HumanityEditStaff.inportUpdatePic(driver);
+		
+		HumanityEditStaff.inputNickName(driver, " Draguljce");
 
-		HumanityEditStaff.inputNickName(driver, "Ana");
+		// HumanityEditStaff.clickSaveEmploy(driver);
 
-		HumanityEditStaff.clickSaveEmploy(driver);
-
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		driver.quit();
-		return true;
+		 return true;
 	}
-
 }
