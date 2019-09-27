@@ -17,14 +17,7 @@ import rs.itbootcamp.humanity.page.objects.HumanityMenu;
 public class HumanityLoginTests {
 
 	public static boolean Login(WebDriver driver) throws InterruptedException {
-//	public static void main(String[] args) throws InterruptedException {
-
-//		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-//		WebDriver driver = new ChromeDriver();
-//
-//		driver.get(HumanityHome.URL);
-//		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-//		driver.manage().window().maximize();
+		
 		try {
 			HumanityHome.clickGoToLogin(driver);
 
@@ -43,15 +36,16 @@ public class HumanityLoginTests {
 			HumanityHome.clickLogin(driver);
 			Thread.sleep(5000);
 
-			if (driver.getCurrentUrl().equals(HumanityHome.URL)) {
-				System.out.println("Uspesno smo se ulogovali");
+		if (driver.getCurrentUrl().equals(HumanityMenu.URL)) {
+				System.out.println("Uspesno ste se ulogovali");
 			} else {
 				System.out.println("Doslo je do greske!");
-			}
+		}
 
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+	
 		return true;
 	}
 	public static boolean AboutUs(WebDriver driver) throws InterruptedException {
@@ -59,4 +53,6 @@ public class HumanityLoginTests {
 	
 	return true;
 	}
-}
+	
+		
+	}

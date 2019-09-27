@@ -12,27 +12,10 @@ import rs.itbootcamp.humanity.page.objects.HumanityStaff;
 
 public class HumanityAddNewEmployeeTests {
 	public static boolean Add_NewEmployee(WebDriver driver) throws InterruptedException {
-		// public static void main(String[] args) throws InterruptedException {
-//		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-//
-//		WebDriver driver = new ChromeDriver();
-//		driver.get(HumanityHome.URL);
-//		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-//		driver.manage().window().maximize();
+	
+	
 		try {
-//			HumanityHome.getGoToLogin(driver);
-//			HumanityHome.clickGoToLogin(driver);
-//
-//			HumanityHome.getUserName(driver);
-//			HumanityHome.clickUserName(driver);
-//			HumanityHome.inputUserName(driver, "kaboget@net1mail.com");
-//			HumanityHome.getPssword(driver);
-//			HumanityHome.clickPssword(driver);
-//			HumanityHome.inputPssword(driver, "bobanrajovic");
-//
-//			HumanityHome.getLogin(driver);
-//			HumanityHome.clickLogin(driver);
-
+			
 			HumanityMenu.getStaffButton(driver);
 			HumanityMenu.clickStaffButton(driver);
 
@@ -58,14 +41,19 @@ public class HumanityAddNewEmployeeTests {
 				HumanityStaff.setEmailInput(driver, email, i);
 			}
 			ExcelUtils.closeExcell();
-			// HumanityStaff.clickSaveEmployeesBtn(driver);
+			 HumanityStaff.clickSaveEmployeesBtn(driver);
 
 			Thread.sleep(5000);
-			driver.close();
-
+			if (driver.getCurrentUrl().equals("https://boban1.humanity.com/app/staff/add/"))
+			System.out.println("Uspesno dodavanje");
+			else {
+				System.out.println("Neuspesno dodavanje");
+			}
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+	driver.quit();
 		return true;
 	}
 

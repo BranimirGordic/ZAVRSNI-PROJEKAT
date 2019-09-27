@@ -15,8 +15,8 @@ public class HumanityHome {
 	private static final String EMAIL_USER_NAME = "//input[@id='email']";
 	private static final String PASSWORD = "//input[@id='password']";
 	private static final String LOG_IN = "//button[contains(text(),'Log in')]";
-// private static final String MY_USER_NAME = "kaboget@net1mail.com";
-// private static final String MY_PASSWORD = "bobanpiroman";
+//	private static final String MY_USER_NAME = "kaboget@net1mail.com";
+// 	private static final String MY_PASSWORD = "bobanpiroman";
 
 //ABOUT US
 

@@ -13,7 +13,7 @@ public class HumanitySettings {
 	private static final String DEFAULT_LANGUAGE_MENU ="//td[@class='nowrap']//select[@name='language']";
 	private static final String TIME_FORMAT_MENU ="//select[@name='pref_24hr']";
 
-	//SELECT COUNTRY
+	//SELECT COUNTRYhttps://boban1.humanity.com/app/staff/edit/5089092/
 
 		public static Select getCountry(WebDriver driver) {
 			return new Select(driver.findElement(By.xpath(COUNTRY_MENU)));

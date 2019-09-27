@@ -6,27 +6,21 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import rs.itbootcamp.humanity.ExcelUtils;
 import rs.itbootcamp.humanity.page.objects.HumanityEditStaff;
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
+import rs.itbootcamp.humanity.page.objects.HumanityMenu;
 import rs.itbootcamp.humanity.page.objects.HumanityProfile;
 
 public class HumanityEditStaff_Test {
-	public static boolean Edit_Staff() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
-		WebDriver driver = new ChromeDriver();
-		driver.get(HumanityHome.URL);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
+	public static boolean Edit_Pic(WebDriver driver) throws InterruptedException {
+		
 
-		HumanityHome.clickGoToLogin(driver);
-		HumanityHome.clickUserName(driver);
-		HumanityHome.inputUserName(driver, "kaboget@net1mail.com");
-		HumanityHome.clickPssword(driver);
-		HumanityHome.inputPssword(driver, "bobanrajovic");
-		HumanityHome.clickLogin(driver);
-		HumanityProfile.clickProfiIcon(driver);
+		
+		
 		// dodavanje slike
+		HumanityMenu.clicSettingMenu(driver);
 		HumanityProfile.clickIconSetting(driver);
 		HumanityEditStaff.inportUpdatePic(driver);
 		
@@ -34,8 +28,22 @@ public class HumanityEditStaff_Test {
 
 		// HumanityEditStaff.clickSaveEmploy(driver);
 
-		Thread.sleep(10000);
-		driver.quit();
+		Thread.sleep(2000);
+		
+		 return true;
+	}
+	public static boolean Edit_NickName(WebDriver driver) throws InterruptedException {
+		// nick Name
+		HumanityMenu.clicSettingMenu(driver);
+		HumanityProfile.clickIconSetting(driver);
+		
+		
+		HumanityEditStaff.inputNickName(driver, " Draguljce");
+
+	
+
+		Thread.sleep(2000);
+		
 		 return true;
 	}
 }

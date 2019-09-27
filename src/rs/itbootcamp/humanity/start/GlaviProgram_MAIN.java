@@ -19,6 +19,7 @@ public class GlaviProgram_MAIN {
 	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);
 		int opcija;
+		int opcija2;
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
@@ -27,114 +28,58 @@ public class GlaviProgram_MAIN {
 		driver.manage().window().maximize();
 
 		do {
+
 			System.out.println("Gde zelite?");
 			System.out.println("Na raspolaganju su vam sledece opcije:");
-			System.out.println("1 - Home Page");
-			System.out.println("2 - Home Menu");
+			System.out.println(" Prvo moras da se ulogujes!");
+			System.out.println("1 - Login");
+			System.out.println("2 - Staff");
 			System.out.println("3 - Setting");
 			System.out.println("4 - Edit Staff");
 			System.out.println("5 - Add ");
 			opcija = sc.nextInt();
 			switch (opcija) {
-			case 1:// home page
-				do {
-					System.out.println("1 - LogIn");
-					System.out.println("2 - About Us");
-					opcija = sc.nextInt();
-					switch (opcija) {
-					case 1:// log in
-						HumanityLoginTests.Login(driver);
-						break;
-					case 2:// about au
-						HumanityLoginTests.AboutUs(driver);
-						break;
-					default:
-						System.out.println("Nije na raspolaganju, biraj ponovo! ");
-						System.out.println();
-						break;
-					}
-				} while (opcija != 0);
-				break;
-
-			case 2:// home menu
-				do {
-					System.out.println("1 - Dashboard");
-					System.out.println("2 - Shift Planing");
-					System.out.println("3 - Time Clock");
-					System.out.println("4 - Leave");
-					System.out.println("5 - Training");
-					System.out.println("6 - Staff");
-					System.out.println("7 - Payroll");
-					System.out.println("8 - Reports");
-					System.out.println("9 - Setting");
-					System.out.println("10 - Profil Mani-Icon");
-					opcija = sc.nextInt();
-					switch (opcija) {
-					case 1: HumanityMenu.clickDashbord(driver);
-						;
-						break;
-					case 2: HumanityMenu.clickshifPlan_Button(driver);
-						;
-					case 3:
-						;
-						break;
-					case 4:
-						;
-					case 5:
-						;
-						break;
-					case 6:
-						;
-					case 7:
-						;
-						break;
-					case 8:
-						;
-					case 9:
-						;
-						break;
-					case 10:
-						;
-					default:
-						System.out.println("Nije na raspolaganju, biraj ponovo! ");
-						System.out.println();
-					}
-
-					break;
-				} while (opcija != 0);
-				HumanityAddNewEmployeeTests.Add_NewEmployee(driver);
-				break;
-			case 3:
-				HumanitySettings_Test.Setting_Country_Language_TimeFormat();
-				break;
-			case 4:
-				HumanityEditStaff_Test.Edit_Staff();
-				break;
-			default:
-				System.out.println("Nije na raspolaganju, biraj ponovo! ");
-				System.out.println();
-				break;
-			}
-		} while (opcija != 0);
-		////////////////////////////////////////////////////////////////////////
-		// sema za do-while
-		do {
-			System.out.println();
-			System.out.println();
-			opcija = sc.nextInt();
-			switch (opcija) {
 			case 1:
-				;
+				HumanityLoginTests.Login(driver);
 				break;
 			case 2:
-				;
-			default:
-				System.out.println("Nije na raspolaganju, biraj ponovo! ");
-				System.out.println();
+				do {
+					System.out.println("1 - Add Employees");
+					opcija2 = sc.nextInt();
+					switch (opcija2) {
+					case 1:
+						HumanityAddNewEmployeeTests.Add_NewEmployee(driver);
+						break;
+					default:
+						System.out.println("Nije na raspolaganju, biraj ponovo! ");
+						break;
+					}
+				} while (opcija2 != 0);
+				break;
+			case 3:
+				do {
+					System.out.println("1 - Dodavanje slike");
+					System.out.println("2 - Dodavanje nadimka");
+					opcija2 = sc.nextInt();
+					switch (opcija2) {
+					case 1:
+						HumanityEditStaff_Test.Edit_Pic(driver);
+						break;
+					case 2:
+						HumanityEditStaff_Test.Edit_NickName(driver);
+						break;
+					default:
+						System.out.println("los izbor, biraj ponovo");
+						break;
+					}
+				} while (opcija2 != 0);
+				break;
+			case 4:
+				
 			}
-///////////////////////////////////////////////////////////////////////////////////
+
 		} while (opcija != 0);
+
 		driver.quit();
 	}
-
 }
